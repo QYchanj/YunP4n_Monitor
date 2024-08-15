@@ -74,6 +74,9 @@ def getKeywordNews(keyword):
             keyword_url = json_str['items'][i]['html_url']
             try:
                 keyword_name = json_str['items'][i]['name']
+                if keyword=="exp" and ("express" in keyword_name or "Express" in keyword_name or "expo" in keyword_name or "experi" in keyword_name):
+                    continue
+                
                 description=json_str['items'][i]['description']
                 pushed_at_tmp = json_str['items'][i]['pushed_at']
                 pushed_at = re.findall('\d{4}-\d{2}-\d{2}', pushed_at_tmp)[0]
