@@ -15,7 +15,9 @@ import re
 
 github_token = os.environ.get("github_token")
 webhook= os.environ.get("webhook")
+webhook2= os.environ.get("webhook2")
 secretKey= os.environ.get("secretKey")
+secretKey2= os.environ.get("secretKey2")
 keywords=os.environ.get("keywords")
 CleanKeywords=os.environ.get("CleanKeywords")
 
@@ -33,6 +35,12 @@ def checkEnvData():
     elif not secretKey:
         logging.error("钉钉 secretKey 获取失败")
         exit(0)
+    elif not webhook2:
+        logging.error("钉钉 webhook2 获取失败")
+        exit(0)
+    elif not secretKey2:
+        logging.error("钉钉 secretKey2 获取失败")
+        exit(0)
     else:
         logging.info("环境变量加载成功")
 
@@ -41,7 +49,8 @@ def init():
     logging.basicConfig(level=logging.INFO)
     logging.info("init application")
     checkEnvData()
-    dingding("测试链接", "钉钉链接成功", webhook, secretKey)
+    #dingding("测试链接", "钉钉链接成功", webhook, secretKey)
+    #dingding("测试链接", "钉钉链接成功", webhook2, secretKey2)
     logging.info("start send test msg")
     return
 
@@ -87,8 +96,10 @@ def dingding(text, msg,webhook,secretKey):
 def sendmsg(pushdata):
     text=""
     for data in pushdata:
-        text+="工具名称:\n{}\n工具网址:\n{}\n详情:\n{}\n\n\n ".format(data.get("keyword_name"),data.get("keyword_url"),data.get("description"))
+        text+="工具名称:{}\n工具网址:{}\n详情:{}\n\n\n ".format(data.get("keyword_name"),data.get("keyword_url"),data.get("description"))
     dingding("新推送",text,webhook,secretKey)
+    dingding("新推送",text,webhook2,secretKey2)
+    
     logging.info("消息发送完成")
 
 def flashCleanData(cleanKeywords):
@@ -123,4 +134,5 @@ def test():
     init()
 
 if __name__ == '__main__':
+    
     yunp4n_main()
