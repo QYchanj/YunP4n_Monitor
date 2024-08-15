@@ -29,7 +29,7 @@ jobs:
       
       - name: Run YunP4n_Sec
         env:
-          keywords: '红蓝对抗 hvv 护网 hw CVE RCE CNVD QVD 未授权 命令执行 安全工具 漏洞利用工具 ExploitGUI poc cobaltstrike BOF &exp  java安全 web安全 云安全 应急响应 安全检测 后渗透 内网渗透 远控 免杀 资产测绘 渗透测试 漏洞扫描 内网渗透 代码审计 漏洞挖掘 Kubernetes攻防 指纹识别 红队工具 蜜罐 钓鱼 威胁情报 CMS漏洞 信息泄漏 信息收集 安全研究'
+          keywords: '红蓝对抗 hvv 护网 CVE RCE CNVD QVD 未授权 命令执行 安全工具 漏洞利用工具 ExploitGUI poc cobaltstrike BOF &exp  java安全 web安全 云安全 应急响应 安全检测 后渗透 内网渗透 远控 免杀 资产测绘 渗透测试 漏洞扫描 内网渗透 代码审计 漏洞挖掘 Kubernetes攻防 指纹识别 红队工具 蜜罐 钓鱼 威胁情报 CMS漏洞 信息泄漏 信息收集 安全研究'
           github_token: ${{ secrets.GITHUB_TOKEN }}
           secretKey: ${{ secrets.DINGDING_SECRETKEY }}
           secretKey2: ${{ secrets.DINGDING_SECRETKEY_2 }}
