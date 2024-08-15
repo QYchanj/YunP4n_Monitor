@@ -96,7 +96,7 @@ def dingding(text, msg,webhook,secretKey):
 def sendmsg(pushdata):
     text=""
     for data in pushdata:
-        text+="工具名称:{}\n工具网址:{}\n详情:{}\n\n\n ".format(data.get("keyword_name"),data.get("keyword_url"),data.get("description"))
+        text="工具名称:{}\n工具网址:{}\n详情:{}\n\n\n ".format(data.get("keyword_name"),data.get("keyword_url"),data.get("description"))
     dingding("新推送",text,webhook,secretKey)
     dingding("新推送",text,webhook2,secretKey2)
     
